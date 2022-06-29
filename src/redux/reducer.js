@@ -1,3 +1,4 @@
+
 const initialState = {
   products: [
     {
@@ -102,8 +103,85 @@ const initialState = {
   ],
 };
 
+
+
 export const shopReducer = (state = initialState, action) => {
   switch (action.type) {
+    case 'add': 
+  return  {...state, cartItems: [...state.cartItems,
+    { id: 1, productId: action.payload, amount:  1},
+ 
+   ],
+
+   products: [...state.products.map(item => {
+      if(item.id === action.payload) {
+        item.left -= 1
+        return item
+      }
+      return item
+      
+
+   })  ]
+
+  }
+  case 'cartAdd': 
+return  {...state, cartItems: [...state.cartItems.map(item => {
+  if(item.productId === action.payload) {
+    item.amount += 1
+    return item
+  }
+  return item
+})
+
+
+ ],
+
+ products: [...state.products.map(item => {
+    if(item.id === action.payload) {
+      item.left -= 1
+      return item
+    }
+    return item
+    
+
+ })  ],
+
+
+
+}
+case 'cartMinus':
+ return   {...state, cartItems: [...state.cartItems.map(item => {
+  if(item.productId === action.payload) {
+    item.amount -= 1
+    return item
+  }
+  return item
+ })],
+
+products: [...state.products.map(item => {
+  if (item.id === action.payload) {
+    item.left += 1
+    return item
+  }
+  return item
+})]
+
+}
+case 'delete': 
+return {...state, cartItems: [...state.cartItems.filter(item => item.productId !== action.payload )],
+
+  products: [...state.products.map(item => {
+    if(item.id === action.payload) {
+    item.left = state.products[0].left
+      return item 
+    }
+    return item
+  })
+  
+  ]
+
+}
+
     default:
       return state;
   }

@@ -17,6 +17,7 @@
 
 .image {
   text-align: center;
+  height: 50%;
 }
 
 .image img {
@@ -35,4 +36,23 @@
 .name {
   font-size: 20px;
   color: gray;
+}
+
+.button {
+  background-color: blue;
+  color: white;
+  border-radius: 4px;
+  border: none;
+  height: 10%;
+}
+
+.oldPrice {
+  text-decoration: line-through;
+
+  opacity: 0.4;
+}
+
+.price {
+  display: flex;
+
 }

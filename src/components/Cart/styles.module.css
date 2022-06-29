@@ -4,6 +4,7 @@
 
 .cartButton img {
   width: 24px;
+  cursor: pointer;
 }
 
 .cartButton span {
@@ -18,4 +19,50 @@
   font-size: 10px;
   text-align: center;
   border-radius: 12px;
+}
+
+.basket {
+  box-shadow: 2px 2px 2px 2px ;
+  position: absolute;
+  margin-left: 57%;
+  margin-top: 30%;
+  width: 40%;
+  background-color: white;
+
+}
+
+
+
+
+.close {
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+
+
+.cart_product_image {
+  width: 25%;
+}
+
+.cartIsEmpty {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+
+}
+
+.plus_minus {
+  border: 1px solid blue;
+  color: blue;
+  margin: 0px 6px 0px 6px;
+  
+}
+
+.x {
+  margin-left:  5x;
+  border-radius: 5px;
+  border: none;
+  background-color:  white;
 }
